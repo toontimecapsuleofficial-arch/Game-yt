@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pet Evolution Tycoon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- FAILSAFE LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <h1>Pet Evolution</h1>
+            <p id="loader-status">Initializing Assets...</p>
+            <div class="progress-bar"><div class="fill"></div></div>
+            <p class="loader-debug" style="font-size:0.7rem; opacity:0.6; margin-top:10px;">Max wait: 2s</p>
+        </div>
+    </div>
+
+    <!-- OFFLINE EARNINGS MODAL -->
+    <div id="offline-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Welcome Back!</h2>
+            <p>Your pets earned while you were away:</p>
+            <div class="coin-display big" id="offline-earnings">0</div>
+            <button class="btn-primary" id="btn-close-offline">Collect</button>
+        </div>
+    </div>
+
+    <!-- GAME CONTAINER -->
+    <div id="game-container" class="hidden">
+        <header class="top-bar">
+            <div class="currency-box">
+                <svg class="icon-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#f1c40f"/><text x="12" y="16" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">$</text></svg>
+                <span id="coin-count">0</span>
+            </div>
+            <div class="income-box">+<span id="income-rate">0.0</span>/s</div>
+            <button class="btn-icon" id="btn-settings" title="Reset Save">⚙️</button>
+        </header>
+
+        <main id="grid-area"></main>
+
+        <footer class="shop-panel">
+            <div class="shop-tabs">
+                <button class="tab active" data-tab="eggs">Eggs</button>
+                <button class="tab" data-tab="upgrades">Upgrades</button>
+            </div>
+            <div id="shop-eggs" class="shop-list active"></div>
+            <div id="shop-upgrades" class="shop-list"></div>
+        </footer>
+
+        <div id="fx-layer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
